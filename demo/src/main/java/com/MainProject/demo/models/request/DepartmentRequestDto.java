@@ -18,6 +18,6 @@ public class DepartmentRequestDto {
     private int deptFee;
     private String deptTopper;
 
-    private List<CourseRequestDto> courses = new ArrayList<>();
+    private List<CourseRequestDto> courses;
 
 }

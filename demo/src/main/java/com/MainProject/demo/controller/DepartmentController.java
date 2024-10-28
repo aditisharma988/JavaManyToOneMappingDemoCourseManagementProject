@@ -57,6 +57,9 @@ public class DepartmentController {
             @PathVariable("id") Long id,
             @RequestBody DepartmentRequestDto departmentRequestDto) {
         DepartmentResponseDto updatedDepartment = departmentService.createAndUpdate(id, departmentRequestDto);
+        if (updatedDepartment == null) {
+            throw new EntityNotFoundException("Department with ID " + id + " not found.");
+        }
         return ResponseEntity.status(200).body(updatedDepartment);
     }
 

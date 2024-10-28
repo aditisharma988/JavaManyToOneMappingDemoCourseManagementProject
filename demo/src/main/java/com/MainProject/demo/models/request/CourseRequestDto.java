@@ -19,7 +19,7 @@ public class CourseRequestDto {
     private int duration;
     private String courseMentor;
     private int price;
-
-    private List<SubjectRequestDto> subjects = new ArrayList<>();
+//
+//    private List<SubjectRequestDto> subjects = new ArrayList<>();
 }
 

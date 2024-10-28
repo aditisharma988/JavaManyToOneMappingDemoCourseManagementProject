@@ -2,6 +2,7 @@ package com.MainProject.demo.services;
 
 
 import com.MainProject.demo.models.request.DepartmentRequestDto;
+import com.MainProject.demo.models.response.CourseResponseDto;
 import com.MainProject.demo.models.response.DepartmentResponseDto;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public interface DepartmentService {
     DepartmentResponseDto createAndUpdate(Long id, DepartmentRequestDto departmentRequestDto);
 
     DepartmentResponseDto delete(Long id);
+
 
 }
 

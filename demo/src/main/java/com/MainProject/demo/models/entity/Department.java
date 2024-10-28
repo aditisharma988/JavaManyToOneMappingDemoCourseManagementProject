@@ -1,4 +1,5 @@
 package com.MainProject.demo.models.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +23,8 @@ public class Department {
     private int deptFee;
     private String deptTopper;
 
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private List<Course> courses = new ArrayList<>();
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonBackReference
+    private List<Course> courses;
 
 }

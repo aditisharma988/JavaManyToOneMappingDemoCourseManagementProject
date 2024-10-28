@@ -1,8 +1,10 @@
 package com.MainProject.demo.models.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 @Table(name="courses")
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Course {
 
     @Id
@@ -33,6 +36,22 @@ public class Course {
 
     @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name="dept_id")
+
+    @JsonIgnore
     private Department department;
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", duration=" + duration +
+                ", courseMentor='" + courseMentor + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
+
+
+
